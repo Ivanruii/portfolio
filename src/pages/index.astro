@@ -1,0 +1,23 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Footer from "@/pods/Footer.astro";
+import Header from "@/pods/Header.astro";
+import Intro from "@/pods/Intro.astro";
+import Projects from "@/pods/Projects.astro";
+import Education from "@/pods/Education.astro";
+import Contact from "@/pods/Contact.astro";
+
+import Separator from "@/components/Separator.astro";
+---
+
+<Layout title="Iván Ruiz Zorrilla - Portfolio">
+  <Header />
+  <main class="flex flex-col gap-24">
+    <Intro />
+    <Separator />
+    <Projects />
+    <Education />
+    <Contact />
+  </main>
+  <Footer />
+</Layout>
