@@ -9,7 +9,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
@@ -19,26 +19,33 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <div class="flex flex-col m-auto max-w-[120ch]">
-      <slot />
+    <div
+      class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-[#e8e8e8]"
+    >
+      <div
+        class="diagonal-stripes p-2 w-full flex justify-center items-center text-xl font-bold sticky top-0 z-20 border-b-[#ffae00] border-b-2"
+      >
+        🚨 THIS SITE IS STILL UNDER DEVELOPMENT 🛠️
+      </div>
+
+      <div class="flex flex-col m-auto max-w-[120ch] px-5">
+        <slot />
+      </div>
     </div>
   </body>
+  <style is:global>
+    body {
+      font-family: "Lexend Variable", system-ui, sans-serif;
+      background: #e8e8e8;
+    }
+    .diagonal-stripes {
+      background-image: repeating-linear-gradient(
+        -45deg,
+        #f4ce38 0,
+        #ffae00 30px,
+        #ffffff 10px,
+        #ffffff 60px
+      );
+    }
+  </style>
 </html>
-<style is:global>
-  :root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      rgb(var(--accent-light)) 30%,
-      white 60%
-    );
-  }
-
-  body {
-    font-family: "Lexend Variable", system-ui, sans-serif;
-    background: #e8e8e8;
-  }
-</style>

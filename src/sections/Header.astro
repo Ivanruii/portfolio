@@ -1,10 +1,15 @@
-<nav>
-  <ul class="flex justify-between gap-5">
+---
+import Dropdown from "@/components/Dropdown.astro";
+import { ProjectsContent } from "@/content/projects.content";
+---
+
+<nav class="border-b-2 border-black">
+  <ul class="flex justify-between py-5">
     <li>
       <a class="header-a" href="#Home">Home</a>
     </li>
     <li>
-      <a class="header-a" href="#Projects">Projects</a>
+      <Dropdown name="Projects" options={ProjectsContent} />
     </li>
     <li>
       <a class="header-a" href="#Education">Education & Certificates</a>
@@ -12,7 +17,6 @@
     <li>
       <a class="header-a" href="#Contact">Contact me</a>
     </li>
-    <li>ENG</li>
   </ul>
 </nav>
 

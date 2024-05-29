@@ -1,0 +1,34 @@
+---
+import Card from "@/components/Card.astro";
+import { ProjectsContent } from "@/content/projects.content";
+---
+
+<div id="Projects">
+  <div class="pb-5">
+    <h2 class="font-bold text-2xl">Projects</h2>
+    <h3>Some things I made...</h3>
+  </div>
+  <div class="flex flex-col gap-5">
+    {
+      ProjectsContent.map(
+        (project: {
+          ID: string;
+          GITHUB_REPO: string;
+          PAGE_URL: string;
+          DESCRIPTION: string;
+          NAME: string;
+          PERSONAL_PROJECT: boolean;
+        }) => (
+          <Card
+            id={project.ID}
+            title={project.NAME}
+            description={project.DESCRIPTION}
+            pageUrl={project.PAGE_URL}
+            githubRepo={project.GITHUB_REPO}
+            personalProject={project.PERSONAL_PROJECT}
+          />
+        )
+      )
+    }
+  </div>
+</div>

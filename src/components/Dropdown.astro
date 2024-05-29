@@ -1,0 +1,38 @@
+---
+const { name, options } = Astro.props;
+---
+
+<div class="group relative inline-block text-left">
+  <div>
+    <button
+      type="button"
+      id="menu-button"
+      aria-expanded="true"
+      aria-haspopup="true"
+    >
+      {name}
+    </button>
+  </div>
+  <div
+    class="hidden absolute right-0 z-10 w-56 rounded-md bg-[#e8e8e8] border-2 border-black group-hover:block"
+    role="menu"
+    aria-orientation="vertical"
+    aria-labelledby="menu-button"
+    tabindex="-1"
+  >
+    <div class="py-1" role="none">
+      {
+        options.map((option: { NAME: string; ID: string }) => (
+          <a
+            href={option.ID}
+            class="block px-4 py-2 text-sm hover:bg-[#D9D9D9] cursor-pointer header-a"
+            role="menuitem"
+            tabindex="-1"
+          >
+            {option.NAME}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</div>

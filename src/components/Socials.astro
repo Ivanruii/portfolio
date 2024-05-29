@@ -2,37 +2,39 @@
 import Github from "@/icons/Github.astro";
 import Threads from "@/icons/Threads.astro";
 import Linkedin from "@/icons/Linkedin.astro";
+
+const socialNetworks = [
+  {
+    name: "Github",
+    link: "https://github.com/Ivanruii",
+    logo: Github,
+  },
+  {
+    name: "Linkedin",
+    link: "https://github.com/Ivanruii",
+    logo: Linkedin,
+  },
+  {
+    name: "Threads",
+    link: "https://github.com/Ivanruii",
+    logo: Threads,
+  },
+];
 ---
 
-<div class="flex gap-5">
-  <div
-    class="group bg-[#D9D9D9] rounded-full w-[48px] h-[48px] flex justify-center items-center p-4 hover:w-auto hover:border-2 hover:border-black transition ease-in-out duration-300"
-  >
-    <Github
-      class="w-[24px] group-hover:hidden absolute transition-opacity ease-in-out delay-150 duration-300"
-    />
-    <a
-      class="hidden group-hover:block uppercase"
-      href="https://github.com/Ivanruii"
-      target="_blank">Github</a
-    >
-  </div>
-
-  <div
-    class="group bg-[#D9D9D9] rounded-full w-[48px] h-[48px] flex justify-center items-center p-4 hover:w-auto hover:border-2 hover:border-black transition ease-in-out duration-300"
-  >
-    <Linkedin class="w-[24px] group-hover:hidden absolute" />
-    <a class="hidden group-hover:block uppercase" href="/" target="_blank"
-      >Linkedin</a
-    >
-  </div>
-
-  <div
-    class="group bg-[#D9D9D9] rounded-full w-[48px] h-[48px] flex justify-center items-center p-4 hover:w-auto hover:border-2 hover:border-black transition ease-in-out duration-300"
-  >
-    <Threads class="w-[24px] group-hover:hidden absolute" />
-    <a class="hidden group-hover:block uppercase" href="/" target="_blank"
-      >Threads</a
-    >
-  </div>
+<div class="flex gap-5 justify-center md:justify-normal">
+  {
+    socialNetworks.map((social) => (
+      <a
+        href={social.link}
+        class="group relative bg-[#D9D9D9] rounded-full w-12 h-12 flex justify-center items-center p-4 hover:bg-black hover:scale-110 transition duration-200"
+        target="_blank"
+      >
+        <social.logo class="w-[24px] absolute group-hover:fill-white transition duration-200" />
+        <span class="opacity-0 group-hover:opacity-100 bg-black text-white text-xs rounded px-2 py-1 absolute bottom-full left-1/2 transform -translate-x-1/2 -translate-y-2 transition duration-200">
+          {social.name}
+        </span>
+      </a>
+    ))
+  }
 </div>
