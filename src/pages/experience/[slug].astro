@@ -5,7 +5,7 @@ import { ExperienceContent } from "@/content/experience.content";
 import Layout from "@/layouts/Layout.astro";
 
 export async function getStaticPaths() {
-  const paths = ExperienceContent.map((project) => ({
+  const paths = ExperienceContent.map(async (project) => ({
     params: { slug: project.SLUG },
   }));
 

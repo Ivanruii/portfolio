@@ -1,5 +1,6 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
+import vercel from "@astrojs/vercel/serverless";
 
 import preact from "@astrojs/preact";
 
@@ -13,5 +14,7 @@ export default defineConfig({
       prefixDefaultLocale: false,
     },
   },
-  output: "static",
+  site: "https://www.ivan-ruiz.es/",
+  output: "server",
+  adapter: vercel(),
 });
