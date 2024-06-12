@@ -13,5 +13,5 @@ export default defineConfig({
       prefixDefaultLocale: false,
     },
   },
-  output: "hybrid",
+  output: "static",
 });
