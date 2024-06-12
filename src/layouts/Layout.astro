@@ -18,34 +18,33 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
-    <div
-      class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-[#e8e8e8]"
-    >
-      <div
-        class="diagonal-stripes p-2 w-full flex justify-center items-center text-xl font-bold sticky top-0 z-20 border-b-[#ffae00] border-b-2"
-      >
-        🚨 THIS SITE IS STILL UNDER DEVELOPMENT 🛠️
-      </div>
-
-      <div class="flex flex-col m-auto max-w-[120ch] px-5">
-        <slot />
-      </div>
+  <body class="bg-[#e8e8e8] dark:bg-[#020817]"
+    ><div class="flex flex-col m-auto max-w-[60ch]">
+      <slot />
     </div>
   </body>
-  <style is:global>
-    body {
-      font-family: "Lexend Variable", system-ui, sans-serif;
-      background: #e8e8e8;
-    }
-    .diagonal-stripes {
-      background-image: repeating-linear-gradient(
-        -45deg,
-        #f4ce38 0,
-        #ffae00 30px,
-        #ffffff 10px,
-        #ffffff 60px
-      );
-    }
-  </style>
 </html>
+<style is:global>
+  body {
+    font-family: "Lexend Variable", system-ui, sans-serif;
+  }
+</style>
+
+<script is:inline>
+  const theme = (() => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return "dark";
+    }
+    return "light";
+  })();
+
+  if (theme === "light") {
+    document.documentElement.classList.remove("dark");
+  } else {
+    document.documentElement.classList.add("dark");
+  }
+  window.localStorage.setItem("theme", theme);
+</script>

@@ -1,0 +1,14 @@
+---
+const { breadcrumb, title, subtitle } = Astro.props;
+---
+
+<div class="flex justify-between">
+  <div class="flex justify-center items-center gap-2">
+    <div class="w-2 h-2 rounded-full bg-[#9f9696]"></div>
+    {breadcrumb}
+  </div>
+</div>
+<div>
+  <h1 class="font-bold text-4xl">{title}</h1>
+  {subtitle && <h2>{subtitle}</h2>}
+</div>

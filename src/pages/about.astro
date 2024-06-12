@@ -1,0 +1,16 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import HeroAbout from "@/components/sections/HeroAbout.astro";
+import ContentAbout from "@/components/sections/ContentAbout.astro";
+---
+
+<Layout title="Iván Ruiz Zorrilla - Portfolio">
+  <Header />
+  <main
+    class="flex flex-col bg-white rounded-xl shadow-lg p-5 px-8 gap-4 dark:bg-[#0f1629] dark:text-white dark:shadow-gray-600"
+  >
+    <HeroAbout />
+    <ContentAbout />
+  </main>
+</Layout>

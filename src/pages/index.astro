@@ -1,23 +1,22 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import Footer from "@/sections/Footer.astro";
-import Header from "@/sections/Header.astro";
-import Intro from "@/sections/Intro.astro";
-import Projects from "@/sections/Projects.astro";
-import Education from "@/sections/Education.astro";
-import Contact from "@/sections/Contact.astro";
-
-import Separator from "@/components/Separator.astro";
+import Header from "@/components/Header.astro";
+import Projects from "@/components/sections/Projects.astro";
+import Education from "@/components/sections/Education.astro";
+import Contact from "@/components/sections/Contact.astro";
+import Experience from "@/components/sections/Experience.astro";
+import HeroHome from "@/components/sections/HeroHome.astro";
 ---
 
 <Layout title="Iván Ruiz Zorrilla - Portfolio">
   <Header />
-  <main class="flex flex-col gap-24">
-    <Intro />
-    <Separator />
-    <Projects />
+  <main
+    class="flex flex-col bg-white rounded-xl shadow-lg p-5 gap-8 dark:bg-[#0f1629] dark:text-white dark:shadow-gray-600"
+  >
+    <HeroHome />
+    <Projects preview={true} />
+    <Experience />
     <Education />
     <Contact />
   </main>
-  <Footer />
 </Layout>

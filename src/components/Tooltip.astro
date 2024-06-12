@@ -1,0 +1,20 @@
+---
+import QuestionMark from "@/icons/QuestionMark.astro";
+
+const { title } = Astro.props;
+---
+
+<div class="relative inline-block group">
+  <div class="tooltip">
+    <QuestionMark />
+
+    <div
+      class="tooltiptext absolute hidden w-30 bg-black text-white text-center rounded p-3 z-10 group-hover:block w-56"
+    >
+      <span class="text-xl">{title}</span>
+      <div class="text-sm">
+        <slot />
+      </div>
+    </div>
+  </div>
+</div>

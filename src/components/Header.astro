@@ -1,0 +1,46 @@
+---
+import AboutIcon from "@/icons/AboutIcon.astro";
+import HomeIcon from "@/icons/HomeIcon.astro";
+import ProjectsIcon from "@/icons/ProjectsIcon.astro";
+import ThemeToggle from "./ThemeToggle";
+
+const navItems = [
+  {
+    name: "Home",
+    link: "/",
+    logo: HomeIcon,
+  },
+  {
+    name: "About",
+    link: "/about",
+    logo: AboutIcon,
+  },
+  {
+    name: "Projects",
+    link: "/projects",
+    logo: ProjectsIcon,
+  },
+];
+---
+
+<nav
+  class="sticky top-7 flex items-center rounded-lg shadow-lg my-7 p-4 justify-between px-8 bg-white dark:bg-[#0f1629] dark:text-white dark:shadow-gray-600"
+>
+  <div class="flex items-center gap-7">
+    {
+      navItems.map((item) => (
+        <a
+          href={item.link}
+          class="group flex items-center justify-center w-8 h-8 rounded-full transition duration-200 hover:bg-[#e2e2e2] hover:scale-110 hover:fill-black"
+        >
+          <item.logo styles="fill-[#a9a9a9] p-[0.35rem] group-hover:fill-[#373737]" />
+          <span class="absolute px-2 py-1 text-xs text-white bg-[#0000009a] rounded opacity-0 transition duration-200 group-hover:opacity-100 bottom-full left-1/2 transform -translate-x-1/2 -translate-y-2">
+            {item.name}
+          </span>
+        </a>
+      ))
+    }
+  </div>
+
+  <ThemeToggle client:only />
+</nav>

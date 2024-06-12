@@ -1,0 +1,39 @@
+---
+import Header from "@/components/Header.astro";
+import HeroCustom from "@/components/sections/HeroCustom.astro";
+import { ProjectsContent } from "@/content/projects.content";
+import Layout from "@/layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const paths = ProjectsContent.map((project) => ({
+    params: { slug: project.SLUG },
+  }));
+
+  return paths;
+}
+
+const { slug } = Astro.params;
+const project = ProjectsContent.find((p) => p.SLUG === slug);
+
+if (!project) {
+  throw new Error(`Project with slug "${slug}" not found`);
+}
+---
+
+<Layout title={`Iván Ruiz Zorrilla - ${project.NAME}`}>
+  <Header />
+  <main
+    class="flex flex-col bg-white rounded-xl shadow-lg p-5 gap-8 dark:bg-[#0f1629] dark:text-white dark:shadow-gray-600"
+  >
+    <HeroCustom
+      breadcrumb={`Projects > ${project.NAME}`}
+      title={project.NAME}
+    />
+    {project.PARAGRAPHS}
+    {
+      project.SHOWCASE_IMAGE && (
+        <img src={project.SHOWCASE_IMAGE} class="rounded-md" />
+      )
+    }
+  </main>
+</Layout>
