@@ -3,8 +3,17 @@
   "compilerOptions": {
     "baseUrl": "D:/portfolio",
     "paths": {
-      "@/*": [
-        "./src/*"
+      "@/components*": [
+        "./src/components/*"
+      ],
+      "@/layouts*": [
+        "./src/layouts/*"
+      ],
+      "@/content*": [
+        "./src/content/*"
+      ],
+      "@/icons": [
+        "./src/icons/*"
       ]
     },
     "jsx": "react-jsx",
