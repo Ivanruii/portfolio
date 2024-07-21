@@ -4,12 +4,10 @@ import HeroCustom from "@/components/sections/HeroCustom.astro";
 import { ProjectsContent } from "@/content/projects.content";
 import Layout from "@/layouts/Layout.astro";
 
-export async function getStaticPaths() {
-  const paths = ProjectsContent.map(async (project) => ({
-    params: { slug: project.SLUG },
+export function getStaticPaths() {
+  return ProjectsContent.map((project) => ({
+    params: { id: project.ID.toString(), slug: project.SLUG },
   }));
-
-  return paths;
 }
 
 const { slug } = Astro.params;
@@ -18,6 +16,8 @@ const project = ProjectsContent.find((p) => p.SLUG === slug);
 if (!project) {
   throw new Error(`Project with slug "${slug}" not found`);
 }
+
+export const prerender = true;
 ---
 
 <Layout title={`Iván Ruiz Zorrilla - ${project.NAME}`}>

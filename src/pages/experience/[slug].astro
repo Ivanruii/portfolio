@@ -1,17 +1,13 @@
 ---
 import Header from "@/components/Header.astro";
-import Experience from "@/components/sections/Experience.astro";
 import HeroCustom from "@/components/sections/HeroCustom.astro";
 import { ExperienceContent } from "@/content/experience.content";
-import { ProjectsContent } from "@/content/projects.content";
 import Layout from "@/layouts/Layout.astro";
 
-export async function getStaticPaths() {
-  const paths = ExperienceContent.map(async (experience) => ({
-    params: { slug: experience.SLUG },
+export function getStaticPaths() {
+  return ExperienceContent.map((experience) => ({
+    params: { id: experience.ID.toString(), slug: experience.SLUG },
   }));
-
-  return paths;
 }
 
 const { slug } = Astro.params;
@@ -20,6 +16,8 @@ const experience = ExperienceContent.find((p) => p.SLUG === slug);
 if (!experience) {
   throw new Error(`Project with slug "${slug}" not found`);
 }
+
+export const prerender = true;
 ---
 
 <Layout title={`Iván Ruiz Zorrilla - ${experience.COMPANY}`}>
