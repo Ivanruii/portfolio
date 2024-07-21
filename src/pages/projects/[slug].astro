@@ -1,8 +1,8 @@
 ---
-import Header from "@/components/Header.astro";
-import HeroCustom from "@/components/sections/HeroCustom.astro";
-import { ProjectsContent } from "@/content/projects.content";
-import Layout from "@/layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import HeroCustom from "../../components/sections/HeroCustom.astro";
+import { ProjectsContent } from "../../content/projects.content";
+import Layout from "../../layouts/Layout.astro";
 
 export function getStaticPaths() {
   return ProjectsContent.map((project) => ({
