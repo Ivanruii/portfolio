@@ -26,4 +26,18 @@ export const ProjectsContent = [
     ],
     SHOWCASE_IMAGE: "/mongo-modeler_showcase.png",
   },
+  {
+    ID: "#autobarrel",
+    SLUG: "autobarrel",
+    NAME: "Autobarrel",
+    DESCRIPTION: "VSCode extension that simplifies barrel files",
+    PAGE_URL:
+      "https://marketplace.visualstudio.com/items?itemName=Ivanruii.autobarrel&ssr=false#qna",
+    GITHUB_REPO: "https://github.com/Ivanruii/Autobarrel",
+    PERSONAL_PROJECT: true,
+    PARAGRAPHS: [
+      "AutoBarrel is a Visual Studio Code extension that simplifies the creation of barrel files (index.ts or index.js) in your TypeScript or JavaScript projects. A barrel file centralizes exports from a directory, making imports easier and cleaner in other files.",
+    ],
+    SHOWCASE_IMAGE: "/barrel-example.gif",
+  },
 ];

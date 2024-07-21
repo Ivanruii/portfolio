@@ -1,10 +1,10 @@
 export const ExperienceContent = [
   {
     ID: "1",
-    LOGO: "/lemoncode_logo.png",
-    SLUG: "lemoncode",
-    COMPANY: "Lemoncode",
+    LOGO: "/basefactor_logo.jpeg",
+    SLUG: "BaseFactor",
+    COMPANY: "BaseFactor",
     TITLE: "(FCT) Training internships",
-    PERIOD: "3 Months",
+    PERIOD: "4 Months",
   },
 ];
