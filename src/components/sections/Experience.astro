@@ -1,15 +1,27 @@
 ---
 import Card from "@/components/Card.astro";
 import { ExperienceContent } from "@/content/experience.content";
+
+const { preview } = Astro.props;
 ---
 
 <div class="flex flex-col gap-5 p-4 rounded-xl bg-[#F6F6F6] dark:bg-[#0c1120]">
-  <div class="flex items-center gap-3 justify-between">
-    <div class="flex justify-center items-center gap-2">
-      <div class="w-2 h-2 bg-[#D9D9D9] rounded-full"></div>
-      <h3 class="text-xl font-semibold">Experience</h3>
-    </div>
-  </div>
+  {
+    preview && (
+      <div class="flex items-center gap-3 justify-between">
+        <div class="flex justify-center items-center gap-2">
+          <div class="w-2 h-2 bg-[#D9D9D9] rounded-full" />
+          <h3 class="text-xl font-semibold">Experience</h3>
+        </div>
+        <a
+          href="/experience"
+          class="bg-white text-black px-3 rounded-lg text-lg"
+        >
+          View All
+        </a>
+      </div>
+    )
+  }
   {
     ExperienceContent.map((experience) => (
       <a href={`/experience/${experience.SLUG}`}>

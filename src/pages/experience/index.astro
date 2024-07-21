@@ -1,7 +1,7 @@
 ---
 import Header from "@/components/Header.astro";
 import HeroProjects from "@/components/sections/HeroProjects.astro";
-import Projects from "@/components/sections/Projects.astro";
+import Experience from "@/components/sections/Experience.astro";
 import Layout from "@/layouts/Layout.astro";
 ---
 
@@ -11,6 +11,6 @@ import Layout from "@/layouts/Layout.astro";
     class="flex flex-col bg-white rounded-xl shadow-lg p-5 gap-8 dark:bg-[#0f1629] dark:text-white dark:shadow-gray-600"
   >
     <HeroProjects />
-    <Projects preview={false} />
+    <Experience preview={true} />
   </main>
 </Layout>

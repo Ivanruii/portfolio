@@ -1,12 +1,14 @@
 ---
 import Header from "@/components/Header.astro";
+import Experience from "@/components/sections/Experience.astro";
 import HeroCustom from "@/components/sections/HeroCustom.astro";
 import { ExperienceContent } from "@/content/experience.content";
+import { ProjectsContent } from "@/content/projects.content";
 import Layout from "@/layouts/Layout.astro";
 
 export async function getStaticPaths() {
-  const paths = ExperienceContent.map(async (project) => ({
-    params: { slug: project.SLUG },
+  const paths = ExperienceContent.map(async (experience) => ({
+    params: { slug: experience.SLUG },
   }));
 
   return paths;
@@ -26,9 +28,9 @@ if (!experience) {
     class="flex flex-col bg-white rounded-xl shadow-lg p-5 gap-8 dark:bg-[#0f1629] dark:text-white dark:shadow-gray-600"
   >
     <HeroCustom
-      breadcrumb={`Projects > ${experience.COMPANY}`}
+      breadcrumb={`Experience > ${experience.COMPANY}`}
       title={experience.COMPANY}
-      subtitle={experience.TITLE}
     />
+    {experience.LOGO && <img src={experience.LOGO} class="rounded-md" />}
   </main>
 </Layout>
