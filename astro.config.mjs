@@ -1,6 +1,5 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
-import vercel from "@astrojs/vercel/static";
 
 import preact from "@astrojs/preact";
 
@@ -14,6 +13,5 @@ export default defineConfig({
       prefixDefaultLocale: false,
     },
   },
-  output: "static",
-  adapter: vercel(),
+  output: "server",
 });
