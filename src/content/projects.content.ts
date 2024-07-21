@@ -1,9 +1,9 @@
 export const ProjectsContent = [
   {
-    // TODO: Add projects logo img
     ID: "#glint-blog",
     SLUG: "glint-blog",
     NAME: "Glint Blog",
+    LOGO: "/glint-blog-logo.png",
     DESCRIPTION: "UX, Web Development, Accessiblity ",
     PAGE_URL: "https://glint-blog.com",
     GITHUB_REPO: "https://github.com/Ivanruii/glint-blog",
@@ -17,6 +17,7 @@ export const ProjectsContent = [
     ID: "#mongo-modeler",
     SLUG: "mongo-modeler",
     NAME: "Mongo Modeler",
+    LOGO: "/mongo-modeler_logo.svg",
     DESCRIPTION: "Tool for visualization of MongoDB schema",
     PAGE_URL: "https://mongomodeler.com/",
     GITHUB_REPO: "https://github.com/Lemoncode/mongo-modeler",
@@ -30,6 +31,7 @@ export const ProjectsContent = [
     ID: "#autobarrel",
     SLUG: "autobarrel",
     NAME: "Autobarrel",
+    LOGO: "/autobarrel-logo.png",
     DESCRIPTION: "VSCode extension that simplifies barrel files",
     PAGE_URL:
       "https://marketplace.visualstudio.com/items?itemName=Ivanruii.autobarrel&ssr=false#qna",

@@ -24,6 +24,7 @@ const { preview } = Astro.props;
       (project: {
         SLUG: string;
         ID: string;
+        LOGO: string;
         DESCRIPTION: string;
         NAME: string;
       }) => (
@@ -32,6 +33,7 @@ const { preview } = Astro.props;
             id={project.ID}
             title={project.NAME}
             description={project.DESCRIPTION}
+            logo={project.LOGO}
           />
         </a>
       )
