@@ -1,0 +1,7 @@
+allowBuilds:
+  esbuild: true
+  sharp: false
+
+overrides:
+  # @vercel/routing-utils pins path-to-regexp@6.1.0 (GHSA-9wv6-86v2-598j)
+  path-to-regexp@>=4.0.0 <6.3.0: ^6.3.0
