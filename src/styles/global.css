@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --shadow-lg: 0 0px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+/*
+  Tailwind v4 changed some defaults. These rules keep the v3 behaviour:
+  - border color defaults to currentColor instead of gray-200
+  - buttons use cursor: default instead of pointer
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
